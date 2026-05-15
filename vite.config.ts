@@ -3,6 +3,7 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
   plugins: [tailwindcss()],
+  base: '/higher-web-practice-calculator/',
   server: {
     port: 3000,
   },

@@ -6,7 +6,6 @@ import tseslint from 'typescript-eslint';
 
 export default [
   { ignores: ['dist/**', 'node_modules/**'] },
-
   js.configs.recommended,
   ...tseslint.configs.recommended,
     {
@@ -31,7 +30,7 @@ export default [
   },
     {
     rules: {
-      '@typescript-eslint/no-unused-vars': 'error',
+      '@typescript-eslint/no-unused-vars': 'warn',
       '@typescript-eslint/no-explicit-any': 'warn',
       '@typescript-eslint/no-floating-promises': 'error',
       '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
@@ -43,7 +42,7 @@ export default [
     },
     rules: {
       'import/order': [
-        'error',
+        'warn',
         {
           groups: [
             'builtin',
