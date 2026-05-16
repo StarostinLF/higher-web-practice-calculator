@@ -5,33 +5,33 @@ import { renderStartPage } from './pages/start-page';
 import { getState, loadInitial, subscribe } from './utils/state';
 
 function render(root: HTMLElement): void {
-  const state = getState();
-  if (!state.loaded) {
-    root.innerHTML = '';
-    return;
-  }
-  switch (state.route) {
-    case 'start':
-      renderStartPage(root);
-      break;
-    case 'main':
-      renderMainPage(root);
-      break;
-    case 'history':
-      renderHistoryPage(root);
-      break;
-    case 'edit':
-      renderEditBudgetPage(root);
-      break;
-  }
+	const state = getState();
+	if (!state.loaded) {
+		root.innerHTML = '';
+		return;
+	}
+	switch (state.route) {
+		case 'start':
+			renderStartPage(root);
+			break;
+		case 'main':
+			renderMainPage(root);
+			break;
+		case 'history':
+			renderHistoryPage(root);
+			break;
+		case 'edit':
+			renderEditBudgetPage(root);
+			break;
+	}
 }
 
 export function initApp(): void {
-  const root = document.getElementById('app');
-  if (!root) {
-    return;
-  }
+	const root = document.getElementById('app');
+	if (!root) {
+		return;
+	}
 
-  subscribe(() => render(root));
-  void loadInitial();
+	subscribe(() => render(root));
+	void loadInitial();
 }
